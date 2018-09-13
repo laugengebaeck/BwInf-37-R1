@@ -8,19 +8,19 @@ public class Vertex {
     private String content;
     private ArrayList<Vertex> adjacency = new ArrayList<>();
 
-    public Vertex(String content){
+    Vertex(String content){
         this.content = content;
     }
 
-    public String getContent() {
+    String getContent() {
         return content;
     }
 
-    public ArrayList<Vertex> getAdjacency() {
+    ArrayList<Vertex> getAdjacency() {
         return adjacency;
     }
 
-    public void addAllToAdjacency(Vertex... vertices){
+    void addAllToAdjacency(Vertex... vertices){
         adjacency.addAll(Arrays.asList(vertices));
         adjacency.sort(Comparator.comparing(Vertex::getContent));
     }

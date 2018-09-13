@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Bitte Datei auswählen!");
         SuperstarHelper helper = new SuperstarHelper();
         helper.showFileSelectionWindow();
+        helper.readToGraph();
         helper.generateSolution();
         System.out.println(helper.getOutput());
     }

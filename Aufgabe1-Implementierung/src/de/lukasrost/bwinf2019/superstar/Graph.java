@@ -24,10 +24,10 @@ class Graph {
     }
 
     String modifiedDFS(){
-        return modifiedDFS(current,new ArrayList<>());
+        return modifiedDFS(current,new ArrayList<>(),null);
     }
 
-    private String modifiedDFS(Vertex start, ArrayList<Vertex> visited){
+    private String modifiedDFS(Vertex start, ArrayList<Vertex> visited, Vertex parent){
         visited.add(start);
         Vertex vt = null;
 
@@ -39,10 +39,10 @@ class Graph {
         }
 
         if (vt != null){
-            return modifiedDFS(vt,visited);
+            return modifiedDFS(vt,visited,start);
         } else {
             for (Vertex vertex : vertices){
-                if (!vertex.equals(start) && !hasEdge(vertex,start)){
+                if (!vertex.equals(start) && !vertex.equals(parent) && !hasEdge(vertex,start)){
                     return "";
                 }
             }

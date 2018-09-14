@@ -1,0 +1,76 @@
+\documentclass[a4paper, notitlepage, 12pt]{scrartcl}
+\author{Sebastian Baron, Simon Fiebich, Lukas Rost \\ \small{Team-ID: 00036}}
+\title{Aufgabe 1 \\ \glqq Superstar\grqq  - Dokumentation}
+\subtitle{37. Bundeswettbewerb Informatik 2018/19 - 1. Runde \\~\\}
+\date{26. November 2018}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage[top=2.5cm, bottom=1.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{tikz}
+\usetikzlibrary{graphs,graphs.standard,positioning}
+
+\usepackage{minted}
+\fvset{breaklines=true}
+
+\pagestyle{fancy}
+\lhead{S. Baron, S. Fiebich, L. Rost, Team-ID: 00036}
+\rhead{Aufgabe 1, Seite \thepage ~von \pageref{LastPage}}
+\cfoot{ }
+
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+\newmintedfile{java}{frame=single,linenos,samepage=false,firstnumber=1,rulecolor=\color{Gray},autogobble,breakafter=.u,fontsize=\small}
+
+\begin{document}
+\renewcommand{\contentsname}{\centerline{Inhaltsverzeichnis}}
+ \maketitle
+ \tableofcontents
+ \thispagestyle{empty}
+ \newpage
+ \setcounter{page}{1}
+
+\section{Lösungsidee}
+Zunächst bietet es sich an, die Eingabe in einen Graphen umzuwandeln. Die Knoten entsprechen dabei den TeeniGram-Mitgliedern. Eine gerichtete Kante verläuft von einem Knoten $x$ zu einem Knoten $y$ genau dann, wenn $x$ $y$ im TeeniGram-Netzwerk folgt.
+Für das in der Aufgabenstellung gegebene Beispiel ergibt sich folgender Graph: \\ \\
+\begin{center}
+\begin{tikzpicture}
+  \graph{
+  H -> S;
+  H -> J;
+  S -> J;
+  };
+\end{tikzpicture}
+\end{center}
+  \begin{thebibliography}{xx}
+    \bibitem[1] {Src:Wiki} Wikipedia-Artikel zur Tiefensuche, \url{https://de.wikipedia.org/wiki/Tiefensuche}
+    \bibitem[2] {Src:ADM} Steven S. Skiena: The Algorithm Design Manual, ISBN 978-1-84800-069-8
+  \end{thebibliography}
+\section{Umsetzung}
+\section{Beispiele}
+\section{Quellcode}
+ \renewcommand{\listingscaption}{Quellcode}
+
+ \begin{longlisting}
+ \javafile{../Aufgabe1-Implementierung/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java}
+ \caption{Ein- und Ausgabe: \texttt{SuperstarHelper.java}}
+ \end{longlisting}
+
+ \begin{longlisting}
+ \javafile{../Aufgabe1-Implementierung/src/de/lukasrost/bwinf2019/superstar/Graph.java}
+ \caption{Implementierung des ADT Graph: \texttt{Graph.java}}
+ \end{longlisting}
+
+ \end{document}

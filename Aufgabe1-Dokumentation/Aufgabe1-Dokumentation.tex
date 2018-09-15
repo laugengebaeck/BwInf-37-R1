@@ -13,10 +13,9 @@
 \usepackage[top=2.5cm, bottom=1.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{fancyvrb}
 \usepackage{caption}
-\usepackage{mathtools}
-\usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{algpseudocode}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{tikz}
@@ -44,7 +43,7 @@
 
 \section{Lösungsidee}
 Zunächst bietet es sich an, die Eingabe in einen Graphen umzuwandeln. Die Knoten entsprechen dabei den TeeniGram-Mitgliedern. Eine gerichtete Kante verläuft von einem Knoten $x$ zu einem Knoten $y$ genau dann, wenn $x$ $y$ im TeeniGram-Netzwerk folgt.
-Für das in der Aufgabenstellung gegebene Beispiel ergibt sich folgender Graph: \\ \\
+Für das in der Aufgabenstellung gegebene Beispiel ergibt sich folgender Graph (Namen abgekürzt):
 \begin{center}
 \begin{tikzpicture}
   \graph{
@@ -54,6 +53,40 @@ Für das in der Aufgabenstellung gegebene Beispiel ergibt sich folgender Graph: 
   };
 \end{tikzpicture}
 \end{center}
+Mithilfe dieses Graphen kann nun ein Superstar gefunden werden. Dafür verwendet man eine modifizierte Version der Tiefensuche. Dazu wählt man einen beliebigen Knoten (z.B. den ersten) als Startpunkt $start$ aus. Man setzt außerdem die Existenz einer Funktion $hasEdge(x,y)$ voraus, die angibt, ob es eine an $x$ beginnende und an $y$ endende Kante gibt. Diese Funktion stellt die einzige Zugriffsmöglichkeit auf die Kanten dar, während die Knoten vorher bekannt sind. Außerdem muss eine Liste $visited$ vorhanden sein, die die schon besuchten Knoten angibt und am Anfang leer ist. \\ \\
+Dann ruft man folgenden Algorithmus mit den Parametern $start$ und \texttt{null} auf:
+\begin{algorithmic}
+  \Function{modifiedDFS}{$start$,$parent$}
+    \State Füge $start$ zu $visited$ hinzu
+    \State $next \gets$ erster noch nicht besuchter Knoten, für den \Call{hasEdge}{$start$,$next$} gilt
+    \If{$next$ existiert}
+      \State \Return \Call{modifiedDFS}{$next$,$start$}
+    \Else
+      \ForAll{Knoten $u$ in $visited$}
+        \If{\Call{hasEdge}{$start$,$u$}}
+          \State \Return kein Superstar
+        \EndIf
+      \EndFor
+      \ForAll{Knoten $k$ (ohne $start$)}
+        \If{not \Call{hasEdge}{$k$,$start$}}
+          \State \Return kein Superstar
+        \EndIf
+      \EndFor
+      \State \Return $start$
+    \EndIf
+  \EndFunction
+\end{algorithmic}
+Dieser Algorithmus steigt sozusagen immer weiter über die erste ausgehende Kante des aktuellen Knotens zum nächsten Knoten hinab. Dabei vermeidet er Kanten, die zu schon besuchten Knoten führen. Hat der aktuelle Knoten keine ausgehenden Kanten (unabhängig davon, ob diese zu schon besuchten Knoten führen), könnte dieser Knoten (und nur dieser Knoten) ein Superstar sein.
+\\ \\
+Andere Knoten kommen dafür nicht in Frage, da ihnen dann auch der aktuelle Knoten folgen müsste. Dies tut er jedoch nicht, da er keine ausgehenden Kanten hat. Nun muss man den aktuellen Knoten nur noch darauf überprüfen, ob alle anderen Knoten ihm folgen (bzw. er von allen knoten eine eingehende Kante besitzt). Ist auch dies der Fall, handelt es sich beim aktuellen Knoten tatsächlich um einen \textit{Superstar}.
+
+TODO
+-Pseudocode kommentieren
+-Quellcode kommentieren
+-visited check in den Quellcode
+-beispiele (eigene?)
+-umsetzung beschreiben
+
   \begin{thebibliography}{xx}
     \bibitem[1] {Src:Wiki} Wikipedia-Artikel zur Tiefensuche, \url{https://de.wikipedia.org/wiki/Tiefensuche}
     \bibitem[2] {Src:ADM} Steven S. Skiena: The Algorithm Design Manual, ISBN 978-1-84800-069-8

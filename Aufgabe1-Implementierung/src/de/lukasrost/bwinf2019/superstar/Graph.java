@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 class Graph {
     private ArrayList<Vertex> vertices = new ArrayList<>();
+    private ArrayList<Vertex> visited = new ArrayList<>();
     private Vertex current;
-
     private int anfrageCounter = 0;
 
     Graph(Vertex... nodes1){
@@ -24,23 +24,28 @@ class Graph {
     }
 
     String modifiedDFS(){
-        return modifiedDFS(current,new ArrayList<>(),null);
+        return modifiedDFS(current,null);
     }
 
-    private String modifiedDFS(Vertex start, ArrayList<Vertex> visited, Vertex parent){
+    private String modifiedDFS(Vertex start, Vertex parent){
         visited.add(start);
-        Vertex vt = null;
+        Vertex next = null;
 
         for (Vertex vertex : vertices) {
             if (!vertex.equals(start) && !visited.contains(vertex) && hasEdge(start,vertex)){
-                vt = vertex;
+                next = vertex;
                 break;
             }
         }
 
-        if (vt != null){
-            return modifiedDFS(vt,visited,start);
+        if (next != null){
+            return modifiedDFS(next,start);
         } else {
+            for (Vertex vis: visited){
+                if (!vis.equals(start) && hasEdge(start,vis)){
+                    return "";
+                }
+            }
             for (Vertex vertex : vertices){
                 if (!vertex.equals(start) && !vertex.equals(parent) && !hasEdge(vertex,start)){
                     return "";

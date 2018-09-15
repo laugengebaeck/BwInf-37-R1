@@ -28,20 +28,20 @@ class SuperstarHelper {
         inputFile = file;
     }
 
-    void readToGraph(){
+    void readToGraph(){ //Einlesen der Eingabedatei
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile)))
         {
             boolean first = true;
             for (String line; (line = br.readLine()) != null;)
             {
-                if (first){
+                if (first){ //erste Zeile: Knoten
                     first = false;
                     for (String name : line.split(" ")){
                         Vertex v = new Vertex(name);
                         vertices.add(v);
                         nameToVertex.put(name,v);
                     }
-                } else {
+                } else { //andere Zeilen: Kanten
                     String[] edge = line.split(" ");
                     nameToVertex.get(edge[0]).addAllToAdjacency(nameToVertex.get(edge[1]));
                 }
@@ -52,11 +52,11 @@ class SuperstarHelper {
         graph = new Graph(vertices.toArray(new Vertex[0]));
     }
 
-    void generateSolution(){
+    void generateSolution(){ //Tiefensuche durchführen
         superStar = graph.modifiedDFS();
     }
 
-    String getOutput(){
+    String getOutput(){ //Ausgabe auf die Konsole
         if (!"".equals(superStar)){
             return "Superstar ist " + superStar + ".\nAnzahl der Anfragen: " + graph.getAnfrageCounter();
         } else {

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Vertex {
-    private String content;
-    private ArrayList<Vertex> adjacency = new ArrayList<>();
+    private String content; //Inhalt
+    private ArrayList<Vertex> adjacency = new ArrayList<>(); //Adjazenzliste
 
     Vertex(String content){
         this.content = content;
@@ -20,7 +20,7 @@ public class Vertex {
         return adjacency;
     }
 
-    void addAllToAdjacency(Vertex... vertices){
+    void addAllToAdjacency(Vertex... vertices){ //Knoten zu Adjazenzliste hinzufügen
         adjacency.addAll(Arrays.asList(vertices));
         adjacency.sort(Comparator.comparing(Vertex::getContent));
     }

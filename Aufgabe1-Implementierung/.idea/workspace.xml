@@ -7,12 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d2d5356-4467-45e6-8e40-8458ee8a4775" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/ebsp_superstar5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/_minted-Aufgabe1-Dokumentation/3FE3A59B84C8906888F38951A5056434A6D6AD498FFC0CA947689D43401D107E.pygtex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.synctex.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../Aufgabe1-Dokumentation/Aufgabe1-Dokumentation.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,39 +27,40 @@
     <session id="356427902">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="13" />
-          <entry key="txt" value="9" />
+          <entry key="java" value="15" />
+          <entry key="txt" value="10" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="13" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="15" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1189" />
-          <entry key="txt" value="218" />
+          <entry key="java" value="1683" />
+          <entry key="txt" value="240" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1189" />
-          <entry key="PLAIN_TEXT" value="218" />
+          <entry key="JAVA" value="1683" />
+          <entry key="PLAIN_TEXT" value="240" />
         </counts>
       </usages-collector>
     </session>
@@ -65,19 +68,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="530">
+              <caret line="53" column="59" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,13 +79,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state relative-caret-position="236">
+              <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1868#1869#0" expanded="true" />
+                <element signature="e#1940#1941#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,10 +120,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Main.java" />
-        <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java" />
-        <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java" />
         <option value="$PROJECT_DIR$/examples/ebsp_superstar5.txt" />
         <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java" />
+        <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java" />
       </list>
     </option>
   </component>
@@ -138,9 +134,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="66" />
-    <option name="width" value="1389" />
+    <option name="x" value="50" />
+    <option name="y" value="63" />
+    <option name="width" value="1390" />
     <option name="height" value="695" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -157,11 +153,6 @@
             <path>
               <item name="Aufgabe1-Implementierung" type="b2602c69:ProjectViewProjectNode" />
               <item name="Aufgabe1-Implementierung" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aufgabe1-Implementierung" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aufgabe1-Implementierung" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aufgabe1-Implementierung" type="b2602c69:ProjectViewProjectNode" />
@@ -186,7 +177,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537002665455" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537002776031" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -243,7 +234,9 @@
       <workItem from="1536846546670" duration="3217000" />
       <workItem from="1536911960823" duration="81000" />
       <workItem from="1536912160814" duration="3147000" />
-      <workItem from="1537001438026" duration="1323000" />
+      <workItem from="1537001438026" duration="1435000" />
+      <workItem from="1537008030665" duration="1863000" />
+      <workItem from="1537012448974" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="Vorbereitung Aufgabe 1">
       <created>1536769765198</created>
@@ -266,17 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1536917746616</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aufgabe 1 - Lösung für Randfall">
+      <created>1537002843319</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537002843319</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12370000" />
+    <option name="totallyTimeSpent" value="14398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1340" height="720" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18853696" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18853696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -286,7 +285,7 @@
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.48854166" visible="true" weight="0.3590164" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.48854166" weight="0.3590164" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49791667" weight="0.48401827" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -317,7 +316,8 @@
     <MESSAGE value="Vorbereitung Aufgabe 1" />
     <MESSAGE value="Aufgabe 1 - Implementierung fertiggestellt" />
     <MESSAGE value="Aufgabe 1 - kleine Verbesserung" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aufgabe 1 - kleine Verbesserung" />
+    <MESSAGE value="Aufgabe 1 - Lösung für Randfall" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aufgabe 1 - Lösung für Randfall" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/stream/BaseStream.java">
@@ -337,20 +337,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/superstar1.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -365,15 +351,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/ebsp_superstar5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        <state relative-caret-position="112">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="530">
+          <caret line="53" column="59" selection-start-line="53" selection-start-column="59" selection-end-line="53" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -382,10 +382,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/SuperstarHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="236">
+          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1868#1869#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
           </folding>
         </state>
       </provider>

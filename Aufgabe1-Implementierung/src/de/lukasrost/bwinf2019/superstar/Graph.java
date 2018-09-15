@@ -20,7 +20,9 @@ class Graph {
 
     private boolean hasEdge(Vertex start, Vertex end){ //Anfragemethode als einziger Zugriff auf Adjazenzliste
         anfrageCounter++;
-        return start.getAdjacency().contains(end);
+        boolean hasEdge = start.getAdjacency().contains(end);
+        System.out.println("[Anfrage] Folgt "+start.getContent()+" "+end.getContent()+"? Antwort: "+(hasEdge ? "Ja" : "Nein"));
+        return hasEdge;
     }
 
     String modifiedDFS(){

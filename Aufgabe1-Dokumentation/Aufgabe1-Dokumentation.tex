@@ -104,7 +104,7 @@ Das Programm besteht aus vier Klassen.
 
 Zunächst wird beim Aufruf des Programms die \texttt{main}-Methode der Klasse \texttt{Main} aufgerufen. Diese erzeugt einen \texttt{SuperstarHelper} und führt dessen Methoden in der richtigen Reihenfolge aus. \\ \\
 Der \texttt{SuperstarHelper} erfragt zunächst mithilfe eines grafischen \texttt{JFileChooser}-Dialogs die Eingabedatei. Anschließend wird diese durch einen \texttt{BufferedReader} eingelesen. Zunächst wird eine Liste der Knoten erstellt. Gleichzeitig wird eine \texttt{HashMap} erstellt, die beim Hinzufügen der Kanten eine einfache Zuordnung von Name zu Knoten ermöglicht. Aus den Knoten wird nun ein \texttt{Graph}-Objekt erzeugt. Anschließend wird dessen \texttt{modifiedDFS()}-Methode aufgerufen und auf Grundlage dieses Algorithmus eine Ausgabe generiert. \\ \\
-Die \texttt{Graph}-Klasse repräsentiert einen Graphen und behrebegt gleichzeitig den eigentlichen Algorithmus. Sie enthält eine Knotenliste, eine Liste der besuchten Knoten, einen Verweis auf den Startknoten sowie einen Anfragezähler. Wichtig ist hier die Methode \texttt{hasEdge()}, die eine Anfrage durchführt und dabei den Anfragezähler inkrementiert. Die Methode \texttt{modifiedDFS()} enthält den Hauptalgorithmus, wie er unter \glqq Lösungsidee \grqq ~vorgestellt wurde. \\ \\
+Die \texttt{Graph}-Klasse repräsentiert einen Graphen und behrebegt gleichzeitig den eigentlichen Algorithmus. Sie enthält eine Knotenliste, eine Liste der besuchten Knoten, einen Verweis auf den Startknoten sowie einen Anfragezähler. Wichtig ist hier die Methode \texttt{hasEdge()}, die eine Anfrage durchführt und dabei den Anfragezähler inkrementiert sowie die Anfrage ausgibt. Die Methode \texttt{modifiedDFS()} enthält den Hauptalgorithmus, wie er unter \glqq Lösungsidee \grqq ~vorgestellt wurde. \\ \\
 Schließlich gibt es noch die \texttt{Vertex}-Klasse, die einen Knoten darstellt. Sie enthält eine Adjazenzliste sowie Funktionen zum Hinzufügen zu dieser und Auslesen dieser. Außerdem ist ein Feld für den Inhalt, in diesem Fall also den Namen des Mitglieds, vorhanden. Die \texttt{equals()}-Methode wurde ebenfalls implementiert, da der Algorithmus sie häufig benutzt.
 
 \section{Beispiele}
@@ -123,8 +123,12 @@ Schließlich gibt es noch die \texttt{Vertex}-Klasse, die einen Knoten darstellt
  commentchar=*        % comment character
  }
  \begin{MyVerbatim}
-Superstar ist Justin.
-Anzahl der Anfragen: 4
+ [Anfrage] Folgt Selena Justin? Antwort: Ja
+ [Anfrage] Folgt Justin Hailey? Antwort: Nein
+ [Anfrage] Folgt Justin Selena? Antwort: Nein
+ [Anfrage] Folgt Hailey Justin? Antwort: Ja
+ Superstar ist Justin.
+ Anzahl der Anfragen: 4
  \end{MyVerbatim}
 
  \RecustomVerbatimEnvironment{MyVerbatim}{Verbatim}{fontsize=\footnotesize,
@@ -143,6 +147,15 @@ Anzahl der Anfragen: 4
   }
 
   \begin{MyVerbatim}
+[Anfrage] Folgt Turing Hoare? Antwort: Ja
+[Anfrage] Folgt Hoare Dijkstra? Antwort: Ja
+[Anfrage] Folgt Dijkstra Knuth? Antwort: Nein
+[Anfrage] Folgt Dijkstra Codd? Antwort: Nein
+[Anfrage] Folgt Dijkstra Turing? Antwort: Nein
+[Anfrage] Folgt Dijkstra Hoare? Antwort: Nein
+[Anfrage] Folgt Turing Dijkstra? Antwort: Ja
+[Anfrage] Folgt Knuth Dijkstra? Antwort: Ja
+[Anfrage] Folgt Codd Dijkstra? Antwort: Ja
 Superstar ist Dijkstra.
 Anzahl der Anfragen: 9
   \end{MyVerbatim}
@@ -163,6 +176,14 @@ Anzahl der Anfragen: 9
    }
 
   \begin{MyVerbatim}
+[Anfrage] Folgt Edsger Jitse? Antwort: Ja
+[Anfrage] Folgt Jitse Jorrit? Antwort: Nein
+[Anfrage] Folgt Jitse Peter? Antwort: Nein
+[Anfrage] Folgt Jitse Pia? Antwort: Nein
+[Anfrage] Folgt Jitse Rineke? Antwort: Nein
+[Anfrage] Folgt Jitse Rinus? Antwort: Nein
+[Anfrage] Folgt Jitse Sjoukje? Antwort: Nein
+[Anfrage] Folgt Jitse Edsger? Antwort: Ja
 Es gibt keinen Superstar.
 Anzahl der Anfragen: 8
   \end{MyVerbatim}
@@ -173,7 +194,7 @@ Anzahl der Anfragen: 8
      framesep=1em, % separation between frame and text
      rulecolor=\color{Gray},
      %
-     label=\fbox{\color{Black}Ausgabe für Beispiel 4},
+     label=\fbox{\color{Black}Ausgabe für Beispiel 4 (gekürzt)},
      labelposition=topline,
      numbers=left,
      %
@@ -183,6 +204,42 @@ Anzahl der Anfragen: 8
      }
 
 \begin{MyVerbatim}
+[Anfrage] Folgt Hanna Melker? Antwort: Nein
+[Anfrage] Folgt Hanna Liv? Antwort: Nein
+[Anfrage] Folgt Hanna Ellen? Antwort: Ja
+[Anfrage] Folgt Ellen Melker? Antwort: Ja
+[Anfrage] Folgt Melker Liv? Antwort: Nein
+[Anfrage] Folgt Melker Ali? Antwort: Ja
+[Anfrage] Folgt Ali Liv? Antwort: Nein
+[Anfrage] Folgt Ali Lova? Antwort: Ja
+[Anfrage] Folgt Lova Liv? Antwort: Ja
+[Anfrage] Folgt Liv Vide? Antwort: Nein
+[Anfrage] Folgt Liv Freja? Antwort: Nein
+[Anfrage] Folgt Liv Melvin? Antwort: Nein
+[Anfrage] Folgt Liv Loke? Antwort: Nein
+[Anfrage] Folgt Liv Sigge? Antwort: Nein
+[Anfrage] Folgt Liv Milton? Antwort: Nein
+[Anfrage] Folgt Liv Sofia? Antwort: Ja
+[...]
+[Anfrage] Folgt August Folke? Antwort: Ja
+[Anfrage] Folgt Folke Tuva? Antwort: Nein
+[Anfrage] Folgt Folke Isabelle? Antwort: Nein
+[Anfrage] Folgt Folke Wilmer? Antwort: Nein
+[...]
+[Anfrage] Folgt Folke Jonathan? Antwort: Nein
+[Anfrage] Folgt Folke Colin? Antwort: Nein
+[Anfrage] Folgt Folke Frank? Antwort: Nein
+[Anfrage] Folgt Folke August? Antwort: Nein
+[Anfrage] Folgt Hanna Folke? Antwort: Ja
+[Anfrage] Folgt Melker Folke? Antwort: Ja
+[Anfrage] Folgt Liv Folke? Antwort: Ja
+[Anfrage] Folgt Ellen Folke? Antwort: Ja
+[Anfrage] Folgt Ali Folke? Antwort: Ja
+[...]
+[Anfrage] Folgt Sebastian Folke? Antwort: Ja
+[Anfrage] Folgt Charlie Folke? Antwort: Ja
+[Anfrage] Folgt Penny Folke? Antwort: Ja
+[Anfrage] Folgt Rut Folke? Antwort: Ja
 Superstar ist Folke.
 Anzahl der Anfragen: 211
 \end{MyVerbatim}
@@ -229,8 +286,12 @@ Harry Ron
    }
 
    \begin{MyVerbatim}
-Es gibt keinen Superstar.
-Anzahl der Anfragen: 4
+ [Anfrage] Folgt Neville Ron? Antwort: Ja
+ [Anfrage] Folgt Ron Hermine? Antwort: Ja
+ [Anfrage] Folgt Hermine Harry? Antwort: Ja
+ [Anfrage] Folgt Harry Neville? Antwort: Ja
+ Es gibt keinen Superstar.
+ Anzahl der Anfragen: 4
    \end{MyVerbatim}
 
 Das eigene Beispiel Nr. 5, für welches ich Figuren einer bekannten Fantasy-Buchreihe benutzt habe, testet einen bestimmten Sonderfall. Testet man nämlich nicht, ob vom aktuellen Knoten aus auch keine Kanten zu bereits besuchten Knoten existieren\footnote{siehe Kommentar \glqq keine Kanten zu besuchten Knoten existieren\grqq ~im Pseudocode}, kann bei diesem Knoten ein falsches Ergebnis ausgegeben werden. Startet man nämlich bei \textit{Neville}, bewegt sich dann zu \textit{Ron} und über \textit{Hermine} zu \textit{Harry}, gibt es keinen noch nicht besuchten Knoten mehr, den man von \textit{Harry} aus erreichen kann. Alle anderen Knoten folgen \textit{Harry}, also könnte er theoretisch der Superstar sein. Dies ist er jedoch nicht, da er \textit{Ron} und \textit{Neville} folgt und somit nicht alle Kriterien erfüllt. Dies wird nur durch den genannten Test entdeckt.

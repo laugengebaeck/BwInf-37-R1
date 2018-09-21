@@ -12,6 +12,7 @@
 \usepackage{hyperref}
 \usepackage[top=2.5cm, bottom=1.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{fancyvrb}
+\usepackage{amsmath}
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
@@ -86,12 +87,41 @@ Dieser Algorithmus steigt sozusagen immer weiter über die erste ausgehende Kant
 Andere Knoten kommen dafür nicht in Frage, da ihnen dann auch der aktuelle Knoten folgen müsste. Dies tut er jedoch nicht, da er keine ausgehenden Kanten hat. Nun muss man den aktuellen Knoten nur noch darauf überprüfen, ob alle anderen Knoten ihm folgen (bzw. er von allen Knoten eine eingehende Kante besitzt). Ist auch dies der Fall, handelt es sich beim aktuellen Knoten tatsächlich um einen \textit{Superstar}.
 
 \subsection{Anzahl der Anfragen}
-Die Anzahl der gestellten Anfragen kann als ungefähr äquivalent bzw. proportional zur Laufzeit betrachtet werden. Somit handelt es sich hier zugleich um eine Laufzeitbetrachtung.
+Die Anzahl der gestellten Anfragen kann als ungefähr äquivalent bzw. proportional zur Laufzeit betrachtet werden. Somit handelt es sich hier zugleich um eine Laufzeitbetrachtung. \\ \\
+Zunächst betrachten wir die Phase bis zum Auffinden des Superstars, d.h. bis $modifiedDFS()$ als Parameter $start$ den Superstar enthält. Da die maximal notwendige Anfragenzahl gesucht ist, ist es sinnvoll, einen Worst-Case-Fall aufzubauen. Für ein Beispiel aus 5 Knoten könnte dieser so aussehen:
+\begin{center}
+\begin{tikzpicture}
+  \graph{
+  A -> E;
+  A -> D;
+  D -> E;
+  D -> C;
+  C -> E;
+  C -> B;
+  B -> E;
+  };
+\end{tikzpicture}
+\end{center}
+Gehen wir nun davon aus, dass die Knoten in der Reihenfolge ${A,B,C,D,E}$ geordnet sind, ergibt sich der Worst Case für die Anfragenanzahl. Dabei werden folgende Anfragen gestellt:
+\begin{enumerate}
+  \item $A -> B$
+  \item $A -> C$
+  \item $A -> D$
+  \item $D -> B$
+  \item $D -> C$
+  \item $C -> B$
+  \item $B -> E$
+\end{enumerate}
+Ein ähnlicher Worst Case lässt sich auch für jede beliebige andere Knotenanzahl erstellen. Allgemein werden dabei $(n - 2) + (n -3) + (n - 4) + ... + 2 + 1 + 1$ Anfragen gestellt.\footnote{Vom ersten Knoten aus $n - 2$ usw.} Insgesamt ergibt dies:
+\begin{equation*}
+  1 + \sum_{i = 2}^{n - 1} n - i = \frac{n^{2} - 3 \cdot n + 4}{2}
+\end{equation*}
+Die Anfragen für die anderen Bestandteile der Suche lassen sich leichter berechnen. Die Überprüfung, dass der mögliche Superstar keine ausgehenden Kanten hat, benötigt insgesamt $n - 1$ Anfragen, denn dass der Superstar keine Kante zu sich selbst hat, ist offensichtlich. Dass alle anderen dem Superstar folgen, ist in $n - 2$ Anfragen sichergestellt, denn der $parent$ des Superstars hat offensichtlich eine Kante zu ihm. Es ergibt sich also insgesamt folgende Maximalanzahl an Anfragen:
+\begin{equation*}
+  \frac{n^{2} - 3 \cdot n + 4}{2} + (n - 1) + (n - 2) = \frac{n^{2} + n - 2}{2}
+\end{equation*}
+Dies ist jedoch wirklich nur eine Maximalanzahl, die in den meisten Fällen erheblich unterschritten wird. Nimmt man die Anfragenanzahl als Grundlage für die Laufzeitbetrachtung, so liegt der Algorithmus in $\mathcal{O}(n^{2})$.
 
-  \begin{thebibliography}{xx}
-    \bibitem[1] {Src:Wiki} Wikipedia-Artikel zur Tiefensuche, \url{https://de.wikipedia.org/wiki/Tiefensuche}
-    \bibitem[2] {Src:ADM} Steven S. Skiena: The Algorithm Design Manual, ISBN 978-1-84800-069-8, Kapitel 5 beschäftigt sich u.a. mit Tiefensuche.
-  \end{thebibliography}
 \section{Umsetzung}
 Das Programm wurde in Java geschrieben und mit Java 10 kompiliert. Die im Unterordner \texttt{out/artifacts} bereitstehende .jar-Datei lässt sich mit einer Java-Version größer oder gleich 10 ausführen. Bei Neukompilierung läuft das Programm aber auch ab Java 8. Bei der jar-Datei handelt es sich um ein Konsolenprogramm. \\ \\
 Das Programm besteht aus vier Klassen.
@@ -104,7 +134,7 @@ Das Programm besteht aus vier Klassen.
 
 Zunächst wird beim Aufruf des Programms die \texttt{main}-Methode der Klasse \texttt{Main} aufgerufen. Diese erzeugt einen \texttt{SuperstarHelper} und führt dessen Methoden in der richtigen Reihenfolge aus. \\ \\
 Der \texttt{SuperstarHelper} erfragt zunächst mithilfe eines grafischen \texttt{JFileChooser}-Dialogs die Eingabedatei. Anschließend wird diese durch einen \texttt{BufferedReader} eingelesen. Zunächst wird eine Liste der Knoten erstellt. Gleichzeitig wird eine \texttt{HashMap} erstellt, die beim Hinzufügen der Kanten eine einfache Zuordnung von Name zu Knoten ermöglicht. Aus den Knoten wird nun ein \texttt{Graph}-Objekt erzeugt. Anschließend wird dessen \texttt{modifiedDFS()}-Methode aufgerufen und auf Grundlage dieses Algorithmus eine Ausgabe generiert. \\ \\
-Die \texttt{Graph}-Klasse repräsentiert einen Graphen und behrebegt gleichzeitig den eigentlichen Algorithmus. Sie enthält eine Knotenliste, eine Liste der besuchten Knoten, einen Verweis auf den Startknoten sowie einen Anfragezähler. Wichtig ist hier die Methode \texttt{hasEdge()}, die eine Anfrage durchführt und dabei den Anfragezähler inkrementiert sowie die Anfrage ausgibt. Die Methode \texttt{modifiedDFS()} enthält den Hauptalgorithmus, wie er unter \glqq Lösungsidee \grqq ~vorgestellt wurde. \\ \\
+Die \texttt{Graph}-Klasse repräsentiert einen Graphen und enthält gleichzeitig den eigentlichen Algorithmus. Sie enthält eine Knotenliste, eine Liste der besuchten Knoten, einen Verweis auf den Startknoten sowie einen Anfragezähler. Wichtig ist hier die Methode \texttt{hasEdge()}, die eine Anfrage durchführt und dabei den Anfragezähler inkrementiert sowie die Anfrage ausgibt. Die Methode \texttt{modifiedDFS()} enthält den Hauptalgorithmus, wie er unter \glqq Lösungsidee \grqq ~vorgestellt wurde. \\ \\
 Schließlich gibt es noch die \texttt{Vertex}-Klasse, die einen Knoten darstellt. Sie enthält eine Adjazenzliste sowie Funktionen zum Hinzufügen zu dieser und Auslesen dieser. Außerdem ist ein Feld für den Inhalt, in diesem Fall also den Namen des Mitglieds, vorhanden. Die \texttt{equals()}-Methode wurde ebenfalls implementiert, da der Algorithmus sie häufig benutzt.
 
 \section{Beispiele}

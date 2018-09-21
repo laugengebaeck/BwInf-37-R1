@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d2d5356-4467-45e6-8e40-8458ee8a4775" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/lukasrost/bwinf2019/superstar/Graph.java" afterDir="false" />
-    </list>
+    <list default="true" id="8d2d5356-4467-45e6-8e40-8458ee8a4775" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,15 +18,15 @@
     <session id="356427902">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -116,8 +114,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="49" />
-    <option name="y" value="62" />
+    <option name="x" value="47" />
+    <option name="y" value="60" />
     <option name="width" value="1390" />
     <option name="height" value="695" />
   </component>
@@ -129,7 +127,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,8 +151,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,6 +218,7 @@
       <workItem from="1537008030665" duration="1863000" />
       <workItem from="1537012448974" duration="53000" />
       <workItem from="1537012752503" duration="657000" />
+      <workItem from="1537164904457" duration="143000" />
     </task>
     <task id="LOCAL-00001" summary="Vorbereitung Aufgabe 1">
       <created>1536769765198</created>
@@ -253,10 +252,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15055000" />
+    <option name="totallyTimeSpent" value="15198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1340" height="720" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18853696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

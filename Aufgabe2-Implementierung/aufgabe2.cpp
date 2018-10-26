@@ -6,7 +6,7 @@ using namespace boost::xpressive;
 
 std::locale de_locale("de_DE.UTF-8");
 
-//funktioniert nicht mit Umlauten -> müssen ersetzt werden
+//nur Windows 1252 Dateien funktionieren
 
 string read(string infile){
     ifstream in(infile);

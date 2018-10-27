@@ -1,29 +1,37 @@
 #include <bits/stdc++.h>
 #include <boost/xpressive/xpressive.hpp>
+#include <boost/algorithm/string.hpp>
+#define WORDLIST "woerterliste_ansi.txt"
 
 using namespace std;
 using namespace boost::xpressive;
 
-std::locale de_locale("de_DE.UTF-8");
+map<string,string> wordmap;
 
-//nur Windows 1252 Dateien funktionieren
+//nur Windows 1252 (= ANSI) Dateien funktionieren
 
 string read(string infile){
     ifstream in(infile);
-    in.imbue(de_locale);
     stringstream buffer;
-    string instr;
-    while(getline(in,instr)){
-        buffer << instr << "\n";
-    }
+    buffer << in.rdbuf();
     return buffer.str();
 }
 
 void write(string output, string outfile){
     ofstream out(outfile);
-    out.imbue(de_locale);
     out << output << "\n";
 
+}
+
+void gen_wordmap(void){
+    ifstream in(WORDLIST);
+    string word;
+    while(in >> word){
+        string key = string(word);
+        boost::algorithm::to_lower(key);
+        sort(key.begin()+1,key.end()-1);
+        wordmap[key] = word;
+    }
 }
 
 string twist(const boost::xpressive::smatch &m){
@@ -41,7 +49,16 @@ string twist(const boost::xpressive::smatch &m){
 }
 
 string detwist(const boost::xpressive::smatch &m){
-    return m[0].str();
+    string word = m[0].str();
+    if(word.length() <= 2) return word;
+    boost::algorithm::to_lower(word);
+    char first = word[0], last = word[word.length()-1];
+
+    word = word.substr(1,word.length()-2);
+    sort(word.begin(),word.end());
+    word = first + word + last;
+
+    return (wordmap.count(word) == 1) ? wordmap[word] : m[0].str();
 }
 
 int main(int argc, char** argv){
@@ -64,6 +81,7 @@ int main(int argc, char** argv){
         write(replaced,outputfile);
     } else if(mode == "-d"){
         // Detwisten
+        gen_wordmap();
         auto str = read(inputfile);
         string replaced = regex_replace(str, reg, detwist);
         write(replaced,outputfile);

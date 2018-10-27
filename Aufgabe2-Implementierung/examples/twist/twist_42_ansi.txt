@@ -1,0 +1,41 @@
+42 (Antwort)
+Die Antwort 42 ist ein Zitat aus der mehrfach verfilmten Roman- und H�rspielreihe Per Anhalter durch die Galaxis des englischen Autors Douglas Adams.
+
+Im Roman ist �42� die von einem Supercomputer nach einigen Millionen Jahren Rechenzeit gegebene Antwort auf die Frage �nach dem Leben, dem Universum und dem ganzen Rest� (englisch �life, the universe and everything�), mit der die Protagonisten letztlich nichts anfangen k�nnen, weil die Frage zu vage gestellt war.
+
+Herkunft
+Der Roman Per Anhalter durch die Galaxis avancierte innerhalb kurzer Zeit zu einem Klassiker der Science-Fiction-Literatur. Er zeichnet sich wie viele Werke Adams� dadurch aus, dass er verschiedene Aspekte des Lebens parodiert, ins Groteske und Absurde verzerrt oder aus einem ungew�hnlichen Blickwinkel betrachtet. Zumeist h�lt er den vordergr�ndig fantastischen und kunterbunt wirkenden Geschichten der Menschheit mit ihren vermeintlich sinnvollen Motiven und vermeintlich gesicherten Ansichten einen Spiegel vor. Das wird besonders in einem Motiv zugespitzt, das ganz direkt die best�ndige Suche der Menschen nach dem Sinn des Seins karikiert.
+
+Im Roman wird ein Computer namens Deep Thought von einer au�erirdischen Kultur speziell daf�r gebaut, die Antwort auf die Frage aller Fragen, n�mlich die �nach dem Leben, dem Universum und dem ganzen Rest� zu errechnen. Er ist so leistungsf�hig, dass er zum Zeitvertreib �ber die Vektoren s�mtlicher Teilchen des Urknalls meditiert. Dennoch ben�tigt er 7,5 Millionen Jahre Rechenzeit, um diese Antwort zu ermitteln, und verk�ndet dann, sie laute �Zweiundvierzig� und sei mit absoluter Sicherheit korrekt. Dass sie dennoch unbefriedigend ist, erkl�rt er damit, dass die Frage zwar umschrieben, aber niemals als konkrete Frage formuliert wurde (�I think the problem, to be quite honest with you, is that you've never actually known what the question is.�). Da er auch sich selbst nicht in der Lage dazu sieht, die Frage zu ermitteln, schl�gt er vor, selbst einen noch gr��eren Computer zu konstruieren, so komplex, dass das organische Leben einen Teil seiner Arbeitsmatrix bildet. Dieser Computer ist der Planet Erde, der die ihm gestellte Aufgabe jedoch nicht abschlie�en kann, weil sich herausstellt, dass er einer geplanten Hyperraum-Umgehungsstra�e im Weg ist und deshalb f�nf Minuten vor Ablauf des Programms von einer kosmischen Bauflotte gesprengt wird.
+
+Deutung
+Im Buch finden sich viele Hinweise auf vermeintliche Deutungen der Zahl. Im zweiten Teil (Das Restaurant am Ende des Universums) gelingt es dem Protagonisten Arthur Dent, als er auf der pr�historischen Erde gestrandet ist, mit Hilfe eines selbstgeschnitzten Scrabblespiels, aus dem er zuf�llig Buchstaben zieht, in Gemeinschaft einiger Fr�hmenschen die Frage zu legen � eine Anspielung auf ein plakatives Bild der Evolutionstheorie, bei dem das Resultat der Evolution mit dem Ergebnis verglichen wird, das herauskommt, wenn unendlich viele Affen unendlich lange auf einer Schreibmaschine schreiben (Infinite-Monkey-Theorem). Paradoxerweise kommt beim Scrabble ein sinnvoller Satz heraus, welcher lautet: �Wie viel ist neun multipliziert mit sechs�. Die offensichtliche Diskrepanz zwischen der Antwort und dieser Frage wird damit erkl�rt, dass auf der pr�historischen Erde die gerade aufkeimende Menschheit, die die richtige Frage noch kannte, von einer anderen Zivilisation verdr�ngt wurde.
+
+Im dritten Buch wird angedeutet, dass die Kenntnis der Antwort und der dazugeh�rigen Frage einander ausschlie�en und niemals beide im selben Universum zur gleichen Zeit bekannt sein k�nnen.
+
+Das vermeintliche Geheimnis um die Zahl zieht sich wie ein roter Faden auch durch die nachfolgenden B�nde der Romanreihe und gab Anlass zu vielf�ltigen Spekulationen um ihre Herkunft. Insbesondere in der Usenet- und Internetkultur wurde �42� schnell zum gefl�gelten Wort und die Verwendung sehr popul�r. Ebenso wie im Buch wurden auch hier der Zahl immer wieder neue Bedeutungen und Mythen zugeschrieben, da im Buch keine endg�ltige Aufl�sung geboten wird.
+
+So entstanden in Usenet-Diskussionen u. a. mathematische Spekulationen wie: Die Formel �neun multipliziert mit sechs� w�rde in einem 13er-Stellenwertsystem 42 ergeben.
+Oder die Wahl der �42� wurde mit dem regelm��igen Muster der bin�ren Schreibweise erkl�rt.
+
+Die Entstehung der Zahl kl�rte der Autor Douglas Adams in einem Usenet-Beitrag 1993 auf. Auf die Frage, warum die Antwort �42� sei, schrieb er:
+
+�The answer to this is very simple. It was a joke. It had to be a number, an ordinary, smallish number, and I chose that one. Binary representations, base thirteen, Tibetan monks are all complete nonsense. I sat at my desk, stared into the garden and thought �42 will do�. I typed it out. End of story.�
+
+�Die Antwort ist ganz einfach. Es war ein Scherz. Es musste eine Zahl sein, eine ganz gew�hnliche, eher kleine Zahl, und ich nahm diese. Bin�re Darstellungen, Basis 13, tibetische M�nche, das ist totaler Unsinn. Ich sa� an meinem Schreibtisch, starrte in den Garten hinaus und dachte: �42 passt�. Ich tippte es hin. Das ist alles.�
+
+Anwendungen
+
+Wahlplakat der Piratenpartei
+In der Softwareentwicklung wird die Zahl 42 � �hnlich wie 0815 und 4711 � h�ufig von Programmierern als magische Zahl verwendet, also als fester Zahlenwert, dem jeder ansehen kann, dass er keinen tieferen Sinn hat, sondern nur ein Beispiel f�r einen beliebigen Wert ist.
+Auch Google beantwortet diese fiktive Frage ihrem Ursprung nach korrekt. Gibt man in das Suchfeld the answer to life, the universe and everything ein, so erh�lt man als Ergebnis des Google-Taschenrechners the answer to life, the universe and everything = 42.[3] Gleiches gilt f�r den Internetdienst WolframAlpha.[4]
+Die britische Musikgruppe Level 42 bezog sich bei der Namensgebung ebenfalls auf die im Roman genannte Zahl.
+Die Computerspiele Gothic 1 und Gothic 2 nutzen die 42, um einen �Test Mode� zu deaktivieren: Gibt man im Charaktermen� �42� ein, so erscheint der Text �What was the question?� am oberen linken Bildschirmrand.
+Die erste eigenst�ndige, auf Basis von Jurix entwickelte Version der Linux-Distribution der SUSE Linux GmbH wurde im Mai 1996 unter dem Namen S.u.S.E. Linux mit der Versionsnummer 4.2 ver�ffentlicht. Die Versionsnummer ergab sich nach langer Diskussion: da man die Versionsnummer 1.1 ablehnte, lehnte man die Nummer lieber an die Zahl 42, die Antwort auf die �Frage aller Fragen� aus Douglas Adams� Roman Per Anhalter durch die Galaxis, an.
+Im Wahlkampf zu den Kommunalwahlen in Nordrhein-Westfalen 2014 plakatierten die Piraten �42� ohne weiteren Inhalt.
+Das Wikidata-Datenobjekt Douglas Adams erhielt den Item identifier �Q42�.
+Die App Math42 spielt mit ihren Namen auf den Roman an (�Antwort zur L�sung aller mathematischen Probleme�).
+Trivia
+Die Zahl 42 hatte schon f�r Lewis Carroll, einen der popul�rsten Schriftsteller der englischen Literatur, �irgendeine Art von spezieller Bedeutung�, meint Martin Gardner, der Autor der sehr ausf�hrlich kommentierten Ausgaben von Alice in Wonderland (1865) und The Hunting of the Snark (1876): Carroll verwendete die Zahl 42 als scheinbar zuf�llig ausgesucht in Alice, in Phantasmagoria und im Snark, dort gleich in zwei verschiedenen Kontexten.[5] Wie Carroll im Snark, so unterteilte auch Douglas Adams die Rundfunk-Version seines Per Anhalter durch die Galaxis in �Fits� (w�rtlich �Abschnitte�).[6][7]
+
+Da der 11. Februar der 42. Tag des Jahres ist, wurde er als m�glicher Gedenktag f�r Douglas Adams gehandelt. Letztendlich wurde der Towel Day aber auf den 25. Mai gelegt.

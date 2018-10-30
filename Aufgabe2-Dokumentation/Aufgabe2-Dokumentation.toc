@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}L\IeC {\"o}sungsidee}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Twisten}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Enttwisten}{1}{subsection.1.2}
+\contentsline {section}{\numberline {2}Umsetzung und Grenzen des Programms}{1}{section.2}
+\contentsline {section}{\numberline {3}Beispiele}{1}{section.3}
+\contentsline {subsection}{\numberline {3.1}Twisten}{1}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Enttwisten}{3}{subsection.3.2}
+\contentsline {section}{\numberline {4}Quellcode}{4}{section.4}

@@ -1,0 +1,300 @@
+\documentclass[a4paper, notitlepage, 12pt]{scrartcl}
+\author{Sebastian Baron, Simon Fiebich, Lukas Rost \\ \small{Team-ID: 00036}}
+\title{Aufgabe 2 \\ \glqq Twist\grqq  - Dokumentation}
+\subtitle{37. Bundeswettbewerb Informatik 2018/19 - 1. Runde \\~\\}
+\date{26. November 2018}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage[top=2.5cm, bottom=1.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{algpseudocode}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{tikz}
+\usetikzlibrary{graphs,graphs.standard,positioning}
+
+\usepackage{minted}
+\fvset{breaklines=true}
+
+\pagestyle{fancy}
+\lhead{S. Baron, S. Fiebich, L. Rost, Team-ID: 00036}
+\rhead{Aufgabe 2, Seite \thepage ~von \pageref{LastPage}}
+\cfoot{ }
+
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+
+\newmintedfile{cpp}{frame=single,linenos,samepage=false,firstnumber=1,rulecolor=\color{Gray},autogobble,breakafter=.u,fontsize=\small}
+
+\begin{document}
+\renewcommand{\contentsname}{\centerline{Inhaltsverzeichnis}}
+ \maketitle
+ \tableofcontents
+ \thispagestyle{empty}
+ \newpage
+ \setcounter{page}{1}
+
+\section{Lösungsidee}
+	
+\subsection{Twisten}
+Das Twisten ist eine sehr einfache Angelegenheit. Da der erste und der letzte Buchstabe eines jeden Wortes beibehalten werden sollen, trennt man diese zunächst vom restlichen Wort ab. Die restlichen Buchstaben dürfen beliebig umgeordnet werden, es darf also eine beliebige Permutation dieser Buchstaben gebildet werden. \\ \\
+Für dieses sogenannte \glqq Shufflen\grqq ~ bieten viele Programmiersprachen bereits Bibliotheksfunktionen an. Ansonsten kann dies programmiertechnisch auch dadurch erreicht werden, dass man $n$ Mal (mit $n$ als Länge des Strings) die Buchstaben an jeweils zwei beliebigen, zufällig ausgewählten Positionen $i$ und $j$ miteinander vertauscht. Die entstehende Permutation ist garantiert zufällig. \\ \\
+Nun kann man das Wort wieder zusammenfügen. An den ersten Buchstaben wird das umgeordnete Wort angefügt und daran wiederum der letzte Buchstabe. Dieses Wort ist nun getwistet. \\ \\
+Ein Beispiel:
+\begin{itemize}
+	\item Wir beginnen mit dem Wort $w$ = \glqq Informatik\grqq .
+	\item Der erste Buchstabe ist $f$ = \glqq I\grqq , der letzte Buchstabe $l$ = \glqq k\grqq.
+	\item Das restliche Wort lautet $r$ = \glqq nformati\grqq .
+	\item Dieses wird umgeordnet. Dabei erhält man z.B. $r_{perm}$ = \glqq ratominf\grqq .
+	\item Das getwistete Wort ist nun $t$ = $f$ + $r_{perm}$ + $l$, in diesem Fall also \glqq Iratominfk\grqq .
+\end{itemize}
+\subsection{Enttwisten}
+
+\section{Umsetzung und Grenzen des Programms}
+
+\section{Beispiele}
+\subsection{Twisten}
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Getwisteter Beispieltext 1},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist1_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Getwisteter Beispieltext 2},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist2_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Getwisteter Beispieltext 3},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist3_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Getwisteter Beispieltext 4},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist4_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Auszug aus dem getwisteten Beispieltext 5},
+	labelposition=topline,
+	numbers=left,
+	firstline=1,
+	lastline=10,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist5_ansi.txt}
+\endgroup
+
+Zusätzlich ist ein eigenes Beispiel beilegt, in dem Auszüge aus dem Wikipedia-Artikel zur Zahl 42 getwistet wurden.
+\subsection{Enttwisten}
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Enttwisteter Text aus der Aufgabenstellung},
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist_orig_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Enttwisteter Beispieltext 1},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist1_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Enttwisteter Beispieltext 2},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist2_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Enttwisteter Beispieltext 3},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist3_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Enttwisteter Beispieltext 4},
+	labelposition=topline,
+	numbers=left,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist4_ansi.txt}
+\endgroup
+
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+	%
+	frame=lines,  % top and bottom rule only
+	framesep=2em, % separation between frame and text
+	rulecolor=\color{Gray},
+	%
+	label=\fbox{\color{Black}Auszug aus dem enttwisteten Beispieltext 5},
+	labelposition=topline,
+	numbers=left,
+	firstline=1,
+	lastline=10,
+	%
+	commandchars=\|\(\), % escape character and argument delimiters for
+	% commands within the verbatim
+	commentchar=*        % comment character
+}
+\begingroup
+\inputencoding{ansinew}
+\VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist5_ansi.txt}
+\endgroup
+
+Auch hier ist wieder das Beispiel zur Zahl 42 beigelegt. Als Ausgangstexte wurden jeweils die durch das Programm getwisteten Beispieltexte benutzt.
+
+\section{Quellcode}
+ \renewcommand{\listingscaption}{Quellcode}
+
+ \begin{longlisting}
+ \cppfile{../Aufgabe2-Implementierung/aufgabe2.cpp}
+ \caption{Implementierung des Twist-Programms: \texttt{aufgabe2.cpp}}
+ \end{longlisting}
+
+ \end{document}

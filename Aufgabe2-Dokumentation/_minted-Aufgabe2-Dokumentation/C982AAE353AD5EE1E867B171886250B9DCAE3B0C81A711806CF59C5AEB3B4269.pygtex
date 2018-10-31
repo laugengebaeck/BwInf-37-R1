@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{sregex} \PYG{n}{reg} \PYG{o}{=} \PYG{n}{\PYGZus{}b} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{o}{+}\PYG{p}{(}\PYG{n}{\PYGZus{}w} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}Ä\PYGZdq{}} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}ä\PYGZdq{}} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}Ü\PYGZdq{}} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}ü\PYGZdq{}} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}Ö\PYGZdq{}} \PYG{o}{|} \PYG{l+s}{\PYGZdq{}ö\PYGZdq{}}\PYG{p}{)} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{\PYGZus{}b}\PYG{p}{;}
+\end{Verbatim}

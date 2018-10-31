@@ -57,9 +57,40 @@ Ein Beispiel:
 	\item Das getwistete Wort ist nun $t$ = $f$ + $r_{perm}$ + $l$, in diesem Fall also \glqq Iratominfk\grqq .
 \end{itemize}
 \subsection{Enttwisten}
-
-\section{Umsetzung und Grenzen des Programms}
-
+Beim Enttwisten muss man möglichst jedem getwisteten Wort ein ungetwistetes Wort aus der bereitgestellten Wörterliste zugeordnet werden. Um dies zu erreichen, muss man eine Funktion $f(w)$ finden, deren Ergebnis bei getwistetem und ungetwistetem Wort übereinstimmt. Diese wird im folgenden Hashfunktion genannt\footnote{Dies ist zwar nicht ganz korrekt, da eine Hashfunktion einem beliebigen Objekt einen Zahlenwert zuweist, während hier ein String bestimmt wird. Trotzdem erfüllt die Funktion einen ähnlichen Zweck wie eine Hashfunktion.}. Hierbei erfahren wir aus einem getwisteten Wort folgendes über den Klartext:
+\begin{itemize}
+	\item Anfangs- und Endbuchstabe
+	\item Länge
+	\item Häufigkeit der restlichen Buchstaben
+\end{itemize}
+Es wäre nun zwar möglich, das gesamte Wörterbuch linear auf Übereinstimmung dieser Eigenschaften zu durchsuchen, dies wäre aber laufzeittechnisch insbesondere bei längeren Texten inakzeptabel. Stattdessen lässt sich mithilfe der Eigenschaften die Hashfunktion bestimmen. Zum Beispiel erfüllt die Funktion $f(w) = f + sort(r) + l$ diese Bedingung. Dabei stellen 
+\begin{itemize}
+	\item $f$ den ersten Buchstaben,
+	\item $r$ die mittleren Buchstaben,
+	\item $l$ den letzten Buchstaben und
+	\item $sort(r)$ eine Funktion, die die Buchstaben des Wortes $r$ alphabetisch sortiert,
+\end{itemize}
+dar. \\ \\
+Mithilfe dieser Funktion ist das Enttwisten nun möglich. Durch eine kurze Vorverarbeitung lässt sich damit die Suche beschleunigen. Dazu legt man eine sogenannte Map an, in der man Objekten (in diesem Fall Wörtern/Strings) andere Objekte (ebenfalls Strings) zuordnen kann, wobei diese Zuordnung natürlich eindeutig ist. Nun kann man für jedes Wort des Wörterbuchs in der Map eine Zuordnung $f(w) -> w$ anlegen. Dem \glqq Hashwert\grqq ~wird also das ungetwistete Wort zugeordnet. \\ \\
+Dadurch lässt sich nun jedes getwistete Wort $t$, dessen Klartext im Wörterbuch hinterlegt ist, enttwisten, indem man $f(t)$ bestimmt und $t$ durch den $f(t)$ zugeordneten Eintrag in der Map ersetzt. Dieses Verfahren hat natürlich auch seine Grenzen. Wenn der Klartext eines Wortes nicht im Wörterbuch enthalten ist, kann das Wort auch nicht enttwistet werden. Um möglichst gute Ergebnisse zu erzielen, sollte das Wörterbuch deshalb möglichst viele Begriffe enthalten.
+\section{Umsetzung}
+Das Programm wurde in der Programmiersprache C++ umgesetzt. Im Implementierungsordner ist ein vorkompiliertes ausführbares Programm für Linux enthalten. Auf anderen Systemen müsste entsprechend neu kompiliert werden.  \\ \\
+Das Programm verwendet die auf jedem System vorhandene Standard-Library (STL) sowie die Boost-Bibliothek für C++, die für den Umgang mit regulären Ausdrücken benötigt wird. Diese lässt sich über den Paketmanager der verwendeten Linux-Distribution nachinstallieren, unter Manjaro Linux beispielsweise mit \texttt{sudo pacman -S boost boost-libs}. \\ \\
+Das Programm muss über die Konsole gestartet werden. Zum Twisten wird das Programm folgendermaßen aufgerufen: \texttt{./aufgabe2 -t <zu twistende Datei> <Ausgabedatei>}, wärend man zum Enttwisten folgenden Befehl verwendet: \texttt{./aufgabe2 -d <zu twistende Datei> <Ausgabedatei>}. Die Ausdrücke in spitzen Klammern sind dabei durch die Pfade zu den entsprechenden Dateien zu ersetzen. \\ \\
+Es soll noch angemerkt werden, dass das Programm nur mit Windows-1252-Dateien (ANSI) funktioniert. Unicode-Dateien verwenden leider zwei Bytes, um Umlaute darzustellen, wodurch diese beim Twisten auseinandergerissen werden können. Demzufolge werden sie dann nicht mehr korrekt dargestellt. \\ \\
+Das Programm besteht aus mehreren Funktionen, die im folgenden erläutert werden.
+\begin{itemize}
+	\item \texttt{read()} liest eine Datei in einen einzigen String ein, während $write()$ einen String in eine Datei schreibt.
+	\item \texttt{gen\_wordmap()} erstellt die Map zum Enttwisten. Dabei wird für jedes Wort in der Wörterliste der Map wie beschrieben ein Eintrag $f(w) -> w$ hinzugefügt. Die Datei, welche die Wörterliste beinhaltet, wird durch die Preprocessor-Anweisung in Zeile 3 festgelegt.
+	\item  \texttt{main()} ist die Hauptfunktion, welche durch das Betriebssystem aufgerufen wird. Zunächst überprüft sie, ob die Anzahl der Konsolenargumente stimmt und liest diese Argumente dann entsprechend ein. \\
+	Um die Bearbeitung des Textes einfach zu gestalten, werden reguläre Ausdrücke und die \texttt{regex\_replace()}-Funktion der Boost-Library verwendet. Diese ersetzt alle Bestandteile eines Strings, auf die der reguläre Ausdruck passt, durch den Rückgabewert einer festgelegten Funktion.
+	Der verwendete Ausdruck beschreibt ein Wort und hat folgende Form: \\
+	\mintinline{cpp}{sregex reg = _b >> +(_w | "Ä" | "ä" | "Ü" | "ü" | "Ö" | "ö") >> _b;} \\
+	Dieser Ausdruck erkennt alle Textbestandteile, die von Wortgrenzen (\texttt{\_b}) umgeben sind und aus mindestens einem Buchstaben (\texttt{\_w}) oder Umlaut bestehen, also alle Wörter.
+	Dementsprechend übergibt man der \texttt{regex\_replace()}-Funktion je nach Modus entweder \texttt{twist()} oder \texttt{detwist()}. Außerdem werden in \texttt{main()} die Ein- bzw. Ausgaberoutinen für die Textdateien aufgerufen.
+	\item \texttt{twist()} twistet je ein Wort, das von \texttt{regex\_replace()} in Form eines speziellen Objekts übergeben wird. Wenn ein Wort nur 2 Zeichen oder weniger lang ist, kann es direkt zurückgegeben werden, denn es verändert sich durch das Twisten nicht. Sonst erstellt man mittels der STL-Funktion \texttt{random\_shuffle()} eine zufällige Permutation der mittleren Buchstaben und gibt entsprechend das getwistete Wort zurück.
+	\item \texttt{detwist()} enttwistet je ein Wort, dass ähnlich wie bei \texttt{twist()} übergeben wird. Wörter mit 2 oder weniger Zeichen ändern sich nicht. Sonst wird die Hashfunktion auf das Wort angewendet und, falls vorhanden, das Wort durch den entsprechenden Eintrag in der Map ersetzt.
+\end{itemize}
 \section{Beispiele}
 \subsection{Twisten}
 \RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
@@ -160,11 +191,10 @@ Ein Beispiel:
 	commentchar=*        % comment character
 }
 \begingroup
-\inputencoding{ansinew}
+\inputencoding{cp1252}
 \VerbatimInput{../Aufgabe2-Implementierung/examples/twist/output_twist5_ansi.txt}
 \endgroup
 
-Zusätzlich ist ein eigenes Beispiel beilegt, in dem Auszüge aus dem Wikipedia-Artikel zur Zahl 42 getwistet wurden.
 \subsection{Enttwisten}
 \RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
 {fontsize=\footnotesize,
@@ -283,11 +313,12 @@ Zusätzlich ist ein eigenes Beispiel beilegt, in dem Auszüge aus dem Wikipedia-
 	commentchar=*        % comment character
 }
 \begingroup
-\inputencoding{ansinew}
+\inputencoding{cp1252}
 \VerbatimInput{../Aufgabe2-Implementierung/examples/detwist/output_detwist5_ansi.txt}
 \endgroup
 
-Auch hier ist wieder das Beispiel zur Zahl 42 beigelegt. Als Ausgangstexte wurden jeweils die durch das Programm getwisteten Beispieltexte benutzt.
+Als Ausgangstexte wurden jeweils die durch das Programm getwisteten Beispieltexte benutzt.
+Bei den Beispieltexten fehlen hier teilweise Klammern oder wurden Anführungszeichen durch Slashes ersetzt. Dies ist in den originalen Ausgabedateien nicht so, sondern hängt mit dem verwendeten \LaTeX{}-Paket zusammen.
 
 \section{Quellcode}
  \renewcommand{\listingscaption}{Quellcode}

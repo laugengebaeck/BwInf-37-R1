@@ -118,9 +118,10 @@ Ein ähnlicher Worst Case lässt sich auch für jede beliebige andere Knotenanza
 \end{equation*}
 Die Anfragen für die anderen Bestandteile der Suche lassen sich leichter berechnen. Die Überprüfung, dass der mögliche Superstar keine ausgehenden Kanten hat, benötigt insgesamt $n - 1$ Anfragen, denn dass der Superstar keine Kante zu sich selbst hat, ist offensichtlich. Dass alle anderen dem Superstar folgen, ist in $n - 2$ Anfragen sichergestellt, denn der $parent$ des Superstars hat offensichtlich eine Kante zu ihm. Es ergibt sich also insgesamt folgende Maximalanzahl an Anfragen:
 \begin{equation*}
-  \frac{n^{2} - 3 \cdot n + 4}{2} + (n - 1) + (n - 2) = \frac{n^{2} + n - 2}{2}
+  a = \frac{n^{2} - 3 \cdot n + 4}{2} + (n - 1) + (n - 2) = \frac{n^{2} + n - 2}{2}
 \end{equation*}
-Dies ist jedoch wirklich nur eine Maximalanzahl, die in den meisten Fällen erheblich unterschritten wird. Nimmt man die Anfragenanzahl als Grundlage für die Laufzeitbetrachtung, so liegt der Algorithmus in $\mathcal{O}(n^{2})$.
+Dies ist jedoch wirklich nur eine Maximalanzahl, die in den meisten Fällen erheblich unterschritten wird. Nimmt man die Anfragenanzahl als Grundlage für die Laufzeitbetrachtung, so liegt der Algorithmus in $\mathcal{O}(n^{2})$. \\ \\
+Im allgemeinen liegt die Anfragenanzahl jedoch erheblich näher an der Best-Case-Anzahl von $(n - 1) + (n - 2) = 2 \cdot n - 3 = \mathcal{O}(n)$. Diese entsteht genau dann, wenn man zufällig mit dem Superstar als erstem Knoten beginnt, da dann der erste Schritt (das Finden des potenziellen Superstars) entfällt. Somit gilt für die Anfragenanzahl $a$ allgemein: $a = \Omega(n) = \mathcal{O}(n^{2})$.
 
 \section{Umsetzung}
 Das Programm wurde in Java geschrieben und mit Java 10 kompiliert. Die im Unterordner \texttt{out/artifacts} bereitstehende .jar-Datei lässt sich mit einer Java-Version größer oder gleich 10 ausführen. Bei Neukompilierung läuft das Programm aber auch ab Java 8. Bei der jar-Datei handelt es sich um ein Konsolenprogramm. \\ \\
